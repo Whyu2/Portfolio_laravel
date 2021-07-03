@@ -1,0 +1,30 @@
+.jumbotron {
+    padding-top: 7rem;
+    background-color: #98b4d4;
+}
+
+#projek {
+    background-color: #98b4d4;
+}
+#footer {
+    background-color: #22282e;
+}
+.card-body {
+    background-color: #98b4d4;
+}
+
+.navbar {
+    background-color: #22282e;
+}
+
+.rounded-circle {
+    background-color: #22282e;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+section {
+    padding-top: 7rem;
+}
