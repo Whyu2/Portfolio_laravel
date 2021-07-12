@@ -76,6 +76,7 @@ class AboutController extends Controller
 
         ]);
         // dd($profile);
+        // dd($request->about);
         $about->about = $request->about;
         $about->save();
         return redirect('/admin/about')->with('status', 'Data, Berhasil Diubah!');

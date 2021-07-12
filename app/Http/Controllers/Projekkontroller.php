@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
-use Illuminate\Http\Request;
+use App\Projek;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class Projekkontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profile = DB::table('profile')->find(1);
-        return view('admin.profile.index', ['profile' => $profile]);
+        $projek = DB::table('projek')->get();
+        return view('admin.projek.index',  ['projek' => $projek]);
     }
 
     /**
@@ -69,39 +69,37 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, Projek $projek)
     {
 
-        // dd($profile->gambar);
+
         $request->validate([
-            'nama' => 'required',
-            'slogan' => 'required',
+            'isi' => 'required',
+
         ]);
+        // dd($request->isi);
 
         $path = public_path() . '/img/';
-
         if ($request->file == '') {
             //jika gambar kosong
-            $gambar_old = $profile->gambar;
+            $gambar_old = $projek->gambar;
             $filename = $gambar_old;
         } else {
             //jika gambar isi
             // cHapus file lama
-            if ($profile->gambar != ''  && $profile->gambar != null) {
-                $gambar_old = $path . $profile->gambar;
+            if ($projek->gambar != ''  && $projek->gambar != null) {
+                $gambar_old = $path . $projek->gambar;
                 unlink($gambar_old);
             }
             $file = $request->file;
             $filename = $file->getClientOriginalName();
             $file->move($path, $filename);
         }
-        
-        //masukkan ke database
-        $profile->nama = $request->nama;
-        $profile->slogan = $request->slogan;
-        $profile->gambar = $filename;
-        $profile->save();
-        return redirect('/admin/profile')->with('status', 'Data, Berhasil Diubah!');
+
+        $projek->deskripsi = $request->isi;
+        $projek->gambar = $filename;
+        $projek->save();
+        return redirect('/admin/projek')->with('status', 'Data, Berhasil Diubah!');
     }
 
     /**

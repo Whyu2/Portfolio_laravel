@@ -22,5 +22,29 @@ class ProfileSeeder extends Seeder
             'about' => 'isi about',
 
         ]);
+        DB::table('projek')->insert([
+            [
+                'gambar' => 'projek_1.jpg',
+                'deskripsi' => 'isi deskripsi 1',
+            ],
+            [
+                'gambar' => 'projek_2.jpg',
+                'deskripsi' => 'isi deskripsi 2',
+            ],
+            [
+                'gambar' => 'projek_3.jpg',
+                'deskripsi' => 'isi deskripsi 3',
+            ],
+            [
+                'gambar' => 'projek_4.jpg',
+                'deskripsi' => 'isi deskripsi 4',
+            ],
+            [
+                'gambar' => 'projek_5.jpg',
+                'deskripsi' => 'isi deskripsi 5',
+            ],
+
+
+        ]);
     }
 }

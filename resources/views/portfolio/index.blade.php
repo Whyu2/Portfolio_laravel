@@ -86,11 +86,28 @@
                 </div>
             </div>
             <div class="row justify-content-center">
+
+  @foreach ($projek as $p)
+      
+ 
+                    
+     
                 <div class="col-md-4 mb-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="img/projek.jpeg" class="card-img-top" alt="Projek">
+                        <img src=" {{asset('img/'.$p->gambar )}}"  class="card-img-top" alt="Projek">
                         <div class="card-body text-center">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">{{$p->deskripsi}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                @endforeach
+          
+                {{-- <div class="col-md-4 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/projek.jpeg" class="card-img-top" alt="Projek">
+                        <div class="card-body text-center"">
+                            <p class=" card-text">2</p>
                         </div>
                     </div>
 
@@ -99,16 +116,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="img/projek.jpeg" class="card-img-top" alt="Projek">
                         <div class="card-body text-center"">
-                            <p class=" card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/projek.jpeg" class="card-img-top" alt="Projek">
-                        <div class="card-body text-center"">
-                            <p class=" card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class=" card-text">3</p>
                         </div>
                     </div>
 
@@ -117,7 +125,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="img/projek.jpeg" class="card-img-top" alt="Projek">
                         <div class="card-body text-center"">
-                            <p class=" card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class=" card-text">4</p>
                         </div>
                     </div>
 
@@ -126,10 +134,10 @@
                     <div class="card" style="width: 18rem;">
                         <img src="img/projek.jpeg" class="card-img-top" alt="Projek">
                         <div class="card-body text-center"">
-                            <p class=" card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class=" card-text">5</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

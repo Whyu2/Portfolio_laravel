@@ -15,9 +15,14 @@
 //     return view('portfolio.index');
 // });
 
+//pindah_halaman
 Route::get('/', 'PagesController@home');
 Route::get('/admin', 'AdminController@home');
 Route::get('/admin/profile', 'ProfileController@index');
 Route::put('/admin/profile/{profile}', 'ProfileController@update');
 Route::get('/admin/about', 'AboutController@index');
+Route::get('/admin/projek', 'Projekkontroller@index');
+
+//edit
 Route::put('/admin/about/{about}', 'AboutController@update');
+Route::put('/admin/projek/{projek}', 'Projekkontroller@update');

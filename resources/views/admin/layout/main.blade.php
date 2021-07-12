@@ -35,7 +35,7 @@
             <li class="nav-item w-100">
                 <a href="{{url('/admin/about')}}" class="nav-link text-light pl-4">About</a>
             </li>
-            <li class="nav-item dropdown w-100">
+            {{-- <li class="nav-item dropdown w-100">
                 <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Project</a>
                 <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
                     <li><a href="#" class="dropdown-item text-light pl-4 p-2">Project 1</a></li>
@@ -44,6 +44,9 @@
                     <li><a href="#" class="dropdown-item text-light pl-4 p-2">Project 4</a></li>
                     <li><a href="#" class="dropdown-item text-light pl-4 p-2">Project 5</a></li>
                 </ul>
+            </li> --}}
+            <li class="nav-item w-100">
+                <a href="{{url('/admin/projek')}}" class="nav-link text-light pl-4">Project</a>
             </li>
             <li class="nav-item w-100">
                 <a href="#" class="nav-link text-light pl-4">Inbox</a>

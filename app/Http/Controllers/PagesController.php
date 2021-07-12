@@ -13,8 +13,8 @@ class PagesController extends Controller
 
         $profile = DB::table('profile')->find(1);
         $about = DB::table('about')->find(1);
+        $projek = DB::table('projek')->get();
 
-
-        return view('portfolio.index', ['profile' => $profile], ['about' => $about]);
+        return view('portfolio.index', compact('profile', 'about', 'projek'));
     }
 }
