@@ -22,7 +22,11 @@ Route::get('/admin/profile', 'ProfileController@index');
 Route::put('/admin/profile/{profile}', 'ProfileController@update');
 Route::get('/admin/about', 'AboutController@index');
 Route::get('/admin/projek', 'Projekkontroller@index');
+Route::get('/admin/inbox', 'InboxController@index');
 
 //edit
 Route::put('/admin/about/{about}', 'AboutController@update');
 Route::put('/admin/projek/{projek}', 'Projekkontroller@update');
+
+//tambah
+Route::put('/admin/inbox/', 'InboxController@store');

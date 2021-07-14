@@ -154,23 +154,40 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form>
+                    <form action="/admin/inbox/" method="post" enctype="multipart/form-data">
+                        @method('put')
+                        @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                            <input type="nama" class="form-control" id="exampleFormControlInput1" placeholder="Isikan Nama ">
+                            <input type="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Isikan Nama ">
+                            @error('nama')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Isikan Email ">
+                            <label for="exampleFormControlInput1 " class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Isikan Email ">
+                            @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Isikan Pesan "></textarea>
+                            <textarea class="form-control @error('pesan') is-invalid @enderror" name="pesan" id="exampleFormControlTextarea1" rows="3" placeholder="Isikan Pesan "></textarea>
+                            @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    @if (session('status'))
+                    <div class="alert mt-3 alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 </div>
+          
             </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

@@ -1,0 +1,79 @@
+@extends('admin/layout/main')
+@section('container')
+   
+   <div class="row bg-light shadow-lg  bg-body rounded p-3">
+        <div class="row">
+
+            <div class="col display-4 mb-2">
+                Inbox
+            </div>
+        </div>
+        
+        <div class="col">
+      
+            <div class="row">
+                <div class="col">
+                  <table class="table">
+                    <thead class="table-dark">
+                          <tr>
+                            <th   style="width: 8%" scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Tanggal</th>
+                            <th style="width: 5%" scope="col">Detail</th>
+                            <th  style="width: 5%" scope="col">Hapus</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                   
+                          @foreach ($inbox as $key => $in)
+                        
+    
+                          <tr>
+                            <th scope="row">{{$inbox->firstItem() + $key}}</th>
+                            <td>{{$in->nama}}</td>
+                            <td>{{$in->email}}</td>
+                            <td>{{$in->created_at}}</td>
+                            <td >
+                              <button type="button" class="btn btn-primary bi bi-pencil-square"></button>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-danger bi bi-trash"></button>
+                            </td>
+                  
+                          </tr>
+                          @endforeach
+                         
+                        </tbody>
+                      </table>
+                      
+                </div>
+                <div class="row">
+                  <div class="col-10">
+                Showing
+                {{$inbox->firstItem()}}
+                to
+                {{$inbox->lastItem()}}
+                of
+                {{$inbox->total()}}
+                entries
+                  </div>
+                  <div class="col-2"><span class="float-right">                {{ $inbox->links() }}</span></div>
+              </div>
+          
+
+       
+
+
+     
+       
+    
+            </div>
+            {{-- @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif --}}
+        </div>
+    </div>
+    @endsection
