@@ -17,4 +17,9 @@ class PagesController extends Controller
 
         return view('portfolio.index', compact('profile', 'about', 'projek'));
     }
+    public function login()
+    {
+
+        return view('portfolio.auth.index');
+    }
 }

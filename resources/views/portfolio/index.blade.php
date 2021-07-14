@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 
 <head>
@@ -41,11 +41,49 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#kontak">Contac Me</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Login</a>
+                    </li>
+
 
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
+
+    @extends('portfolio/layout/main')
+    @section('container')
+
+    <body id="home">
+        <nav class="navbar navbar-expand-lg shadow-lg navbar-dark fixed-top ">
+            <div class="container">
+                <a class="navbar-brand" href="#home"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projek">Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#kontak">Contac Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/login')}}">Login</a>
+                        </li>
+    
+    
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
     <section class="jumbotron text-center">
         <img src=" {{asset('img/'.$profile->gambar )}}"  alt="me" width="200" class="rounded-circle img-thumbnail mb-3">
@@ -194,8 +232,16 @@
             <path fill="#22282E" fill-opacity="1" d="M0,32L34.3,48C68.6,64,137,96,206,101.3C274.3,107,343,85,411,106.7C480,128,549,192,617,202.7C685.7,213,754,171,823,165.3C891.4,160,960,192,1029,202.7C1097.1,213,1166,203,1234,170.7C1302.9,139,1371,85,1406,58.7L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
         </svg>
     </section>
-
     <section id="footer">
+
+        <footer class="text-center pb-3">
+            <p class="text-light">Latihan@Wahyu@</p>
+        </footer>
+
+    </section>
+    @endsection
+
+    {{-- <section id="footer">
 
         <footer class="text-center pb-3">
             <p class="text-light">Latihan@Wahyu@</p>
@@ -217,4 +263,4 @@
     -->
 </body>
 
-</html>
+</html> --}}

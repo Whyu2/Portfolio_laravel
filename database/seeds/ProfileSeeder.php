@@ -43,8 +43,11 @@ class ProfileSeeder extends Seeder
                 'gambar' => 'projek_5.jpg',
                 'deskripsi' => 'isi deskripsi 5',
             ],
-
-
+        ]);
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt("1234"),
         ]);
     }
 }

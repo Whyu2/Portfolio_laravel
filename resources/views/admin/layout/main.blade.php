@@ -37,6 +37,7 @@
             <li class="nav-item w-100">
                 <a href="{{url('/admin/about')}}" class="nav-link text-light pl-4">About</a>
             </li>
+        
             {{-- <li class="nav-item dropdown w-100">
                 <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Project</a>
                 <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
@@ -59,7 +60,8 @@
     <section class="p-4 my-container active-cont  ">
 
         {{-- <button class="btn btn-dark my-4" id="menu-btn">Menu</button> --}}
-        <a href="{{'/'}}" class="btn btn-primary position-end my-4">Kembali Ke Portofolio</a>
+        <a href="{{'/admin/logout'}}" class="btn btn-primary position-end my-4">Kembali Ke Portofolio</a>
+
     @yield('container')
 
 
