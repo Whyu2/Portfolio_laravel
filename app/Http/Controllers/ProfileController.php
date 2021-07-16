@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profile = DB::table('profile')->find(1);
+        $profile = Profile::find(1);
         return view('admin.profile.index', ['profile' => $profile]);
     }
 

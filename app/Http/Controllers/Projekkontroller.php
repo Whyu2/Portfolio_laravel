@@ -15,7 +15,7 @@ class Projekkontroller extends Controller
      */
     public function index()
     {
-        $projek = DB::table('projek')->get();
+        $projek = Projek::get();
         return view('admin.projek.index',  ['projek' => $projek]);
     }
 

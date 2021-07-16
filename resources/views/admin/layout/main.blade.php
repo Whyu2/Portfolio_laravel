@@ -27,10 +27,8 @@
         <a href="#" class="navbar-brand text-light mt-5">
             <div class="display-5 font-weight-bold">Admin</div>
         </a>
-        <ul class="navbar-nav active-nav d-flex flex-column mt-5 w-100">
-            <li class="nav-item w-100">
-                <a href="{{url('/admin')}}"" class="nav-link text-light pl-4">Home</a>
-            </li>
+        <ul class="navbar-nav active-nav d-flex flex-column mt-5 ms-5 w-100">
+         
             <li class="nav-item w-100">
                 <a href="{{url('/admin/profile')}}" class="nav-link text-light pl-4">Profile</a>
             </li>

@@ -21,14 +21,18 @@ Route::get('/login', 'PagesController@login')->name('login');
 //login
 Route::post('/postlogin', 'Auth\LoginController@postlogin')->name('postlogin');
 Route::get('/admin/logout', 'Auth\LoginController@logout')->name('logout');
+Route::put('/admin/inbox/', 'InboxController@store');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/admin', 'AdminController@home');
+    // Route::get('/admin', 'AdminController@home');
     Route::get('/admin/profile', 'ProfileController@index');
     Route::put('/admin/profile/{profile}', 'ProfileController@update');
     Route::get('/admin/about', 'AboutController@index');
     Route::get('/admin/projek', 'Projekkontroller@index');
     Route::get('/admin/inbox', 'InboxController@index');
+    Route::get('/admin/inbox/{inbox}', 'InboxController@detail');
+    Route::delete('/admin/inbox/{inbox}', 'InboxController@destroy');
+
 
 
     //edit
@@ -36,5 +40,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/admin/projek/{projek}', 'Projekkontroller@update');
 
     //tambah
-    Route::put('/admin/inbox/', 'InboxController@store');
+
 });

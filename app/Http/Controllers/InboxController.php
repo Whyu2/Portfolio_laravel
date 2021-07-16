@@ -92,8 +92,19 @@ class InboxController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Inbox $inbox)
     {
-        //
+        Inbox::destroy($inbox->id);
+
+        return redirect('/admin/inbox')->with('status', 'Data, Berhasil Dihapus!');
+    }
+
+
+    public function detail($inbox)
+    {
+        $data = DB::table('inbox')->where('id', $inbox)->first();
+        $date = \Carbon\Carbon::parse($data->created_at)->format('d-m-Y');
+
+        return view('admin.inbox.detail', compact('data', 'date'));
     }
 }

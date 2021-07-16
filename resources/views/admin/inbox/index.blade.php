@@ -8,7 +8,11 @@
                 Inbox
             </div>
         </div>
-        
+          @if (session('status'))
+            <div class="alert alert-danger">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="col">
       
             <div class="row">
@@ -19,30 +23,38 @@
                             <th   style="width: 8%" scope="col">No</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Tanggal</th>
+                          
                             <th style="width: 5%" scope="col">Detail</th>
                             <th  style="width: 5%" scope="col">Hapus</th>
                           </tr>
                         </thead>
                         <tbody>
                    
-                          @foreach ($inbox as $key => $in)
+                          @forelse ($inbox as $key => $in)
                         
     
                           <tr>
                             <th scope="row">{{$inbox->firstItem() + $key}}</th>
                             <td>{{$in->nama}}</td>
                             <td>{{$in->email}}</td>
-                            <td>{{$in->created_at}}</td>
+                          
                             <td >
-                              <button type="button" class="btn btn-primary bi bi-pencil-square"></button>
+                              <a href="/admin/inbox/{{$in->id}}" class="btn btn-primary bi bi-pencil-square"></a>
                             </td>
                             <td>
-                              <button type="button" class="btn btn-danger bi bi-trash"></button>
+                                <form action="/admin/inbox/{{$in->id}}" method="POST">
+                                @method('delete')
+                                  @csrf
+                                  <button class="btn btn-danger bi bi-trash" type="submit"></button>
+                                </form>
+                          
+                              {{-- <a href="/admin/inbox/delete/{{$in->id}}" class="btn btn-danger bi bi-trash"></a> --}}
                             </td>
                   
                           </tr>
-                          @endforeach
+                          @empty
+                          <h3>Belum ada pesan masuk</h3>
+                          @endforelse
                          
                         </tbody>
                       </table>
